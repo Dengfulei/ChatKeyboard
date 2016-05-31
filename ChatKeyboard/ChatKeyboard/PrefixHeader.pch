@@ -1,0 +1,19 @@
+//
+//  PrefixHeader.pch
+//  ChatKeyboard
+//
+//  Created by jiangys on 16/5/31.
+//  Copyright © 2016年 jiangys. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+
+#import "UIView+Frame.h"
+#import "YSConst.h"
+
+#endif /* PrefixHeader_pch */
