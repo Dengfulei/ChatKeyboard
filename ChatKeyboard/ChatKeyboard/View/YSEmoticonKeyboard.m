@@ -74,14 +74,14 @@
         self.tabBar = tabBar;
         
         // 表情选中的通知
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emoticonDidSelect) name:YSEmotionDidSelectNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emoticonDidSelect) name:YSEmoticonDidSelectNotification object:nil];
     }
     return self;
 }
 
 - (void)emoticonDidSelect
 {
-    self.recentListView.emoticons = [YSEmoticonTool recentEmoticons];
+    self.recentListView.emoticonArray = [YSEmoticonTool recentEmoticons];
 }
 
 - (void)dealloc
@@ -96,13 +96,13 @@
     // 1.tabbar
     self.tabBar.width = self.width;
     self.tabBar.height = 37;
-    self.tabBar.x = 0;
-    self.tabBar.y = self.height - self.tabBar.height;
+    self.tabBar.left = 0;
+    self.tabBar.top = self.height - self.tabBar.height;
     
     // 2.表情内容
-    self.showingListView.x = self.showingListView.y = 0;
+    self.showingListView.left = self.showingListView.top = 0;
     self.showingListView.width = self.width;
-    self.showingListView.height = self.tabBar.y;
+    self.showingListView.height = self.tabBar.top;
 }
 
 #pragma mark - YSEmoticonTabBarDelegate
@@ -115,7 +115,6 @@
     switch (buttonType) {
         case YSEmoticonTabBarButtonTypeRecent: { // 最近
             // 加载沙盒中的数据
-            //            self.recentListView.emoticons = [YSEmoticonTool recentEmoticons];
             [self addSubview:self.recentListView];
             break;
         }
