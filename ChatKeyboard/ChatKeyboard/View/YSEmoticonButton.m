@@ -61,7 +61,7 @@
         [self setImage:[UIImage imageNamed:emoticonModel.png] forState:UIControlStateNormal];
     } else if (emoticonModel.code) { // 是emoji表情
         // 设置emoji
-        //[self setTitle:emoticonModel.code.emoji forState:UIControlStateNormal];
+        [self setTitle:emoticonModel.code.emoji forState:UIControlStateNormal];
     }
 }
 @end

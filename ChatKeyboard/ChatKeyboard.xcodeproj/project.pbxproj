@@ -266,6 +266,9 @@
 		5AA76F6A1CFEBC5C001BF0A9 /* YSEmoticonPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA76F681CFEBC5C001BF0A9 /* YSEmoticonPageView.m */; };
 		5AA76F6D1CFEBCCC001BF0A9 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA76F6C1CFEBCCC001BF0A9 /* NSString+Emoji.m */; };
 		5AA76F701CFEBEBC001BF0A9 /* YSConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA76F6F1CFEBEBC001BF0A9 /* YSConst.m */; };
+		5AA76F731CFECF31001BF0A9 /* YSEmoticonTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA76F721CFECF31001BF0A9 /* YSEmoticonTextView.m */; };
+		5AA76F761CFED560001BF0A9 /* YSEmoticonAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA76F751CFED560001BF0A9 /* YSEmoticonAttachment.m */; };
+		5AA76F791CFED799001BF0A9 /* UITextView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA76F781CFED799001BF0A9 /* UITextView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -581,6 +584,12 @@
 		5AA76F6C1CFEBCCC001BF0A9 /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
 		5AA76F6E1CFEBEBC001BF0A9 /* YSConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSConst.h; sourceTree = "<group>"; };
 		5AA76F6F1CFEBEBC001BF0A9 /* YSConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSConst.m; sourceTree = "<group>"; };
+		5AA76F711CFECF31001BF0A9 /* YSEmoticonTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSEmoticonTextView.h; sourceTree = "<group>"; };
+		5AA76F721CFECF31001BF0A9 /* YSEmoticonTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSEmoticonTextView.m; sourceTree = "<group>"; };
+		5AA76F741CFED560001BF0A9 /* YSEmoticonAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSEmoticonAttachment.h; sourceTree = "<group>"; };
+		5AA76F751CFED560001BF0A9 /* YSEmoticonAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSEmoticonAttachment.m; sourceTree = "<group>"; };
+		5AA76F771CFED799001BF0A9 /* UITextView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextView+Extension.h"; path = "../../../../Project/黑马微博2期51-事件处理/黑马微博2期/Classes/Main(主要)/Category/UITextView+Extension.h"; sourceTree = "<group>"; };
+		5AA76F781CFED799001BF0A9 /* UITextView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextView+Extension.m"; path = "../../../../Project/黑马微博2期51-事件处理/黑马微博2期/Classes/Main(主要)/Category/UITextView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -728,6 +737,8 @@
 			children = (
 				5A58694C1CFC2939002F77A2 /* YSEmoticonModel.h */,
 				5A58694D1CFC2939002F77A2 /* YSEmoticonModel.m */,
+				5AA76F741CFED560001BF0A9 /* YSEmoticonAttachment.h */,
+				5AA76F751CFED560001BF0A9 /* YSEmoticonAttachment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -758,6 +769,8 @@
 				5A79DA6F1CFD7C9700417C1C /* YSEmoticonKeyboard.m */,
 				5A79DA711CFD851800417C1C /* YSEmoticonListView.h */,
 				5A79DA721CFD851800417C1C /* YSEmoticonListView.m */,
+				5AA76F711CFECF31001BF0A9 /* YSEmoticonTextView.h */,
+				5AA76F721CFECF31001BF0A9 /* YSEmoticonTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1034,6 +1047,8 @@
 				5A79DA661CFD39DA00417C1C /* UIView+Frame.m */,
 				5AA76F6B1CFEBCCC001BF0A9 /* NSString+Emoji.h */,
 				5AA76F6C1CFEBCCC001BF0A9 /* NSString+Emoji.m */,
+				5AA76F771CFED799001BF0A9 /* UITextView+Extension.h */,
+				5AA76F781CFED799001BF0A9 /* UITextView+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1397,6 +1412,8 @@
 				5AA76F6D1CFEBCCC001BF0A9 /* NSString+Emoji.m in Sources */,
 				5A5869551CFC2939002F77A2 /* MJIvar.m in Sources */,
 				5A79DA731CFD851800417C1C /* YSEmoticonListView.m in Sources */,
+				5AA76F761CFED560001BF0A9 /* YSEmoticonAttachment.m in Sources */,
+				5AA76F731CFECF31001BF0A9 /* YSEmoticonTextView.m in Sources */,
 				5A5869581CFC2939002F77A2 /* MJType.m in Sources */,
 				5A79DA671CFD39DA00417C1C /* NSString+Size.m in Sources */,
 				5A58695F1CFC2939002F77A2 /* YSEmoticonTool.m in Sources */,
@@ -1413,6 +1430,7 @@
 				5A58695A1CFC2939002F77A2 /* NSObject+MJCoding.m in Sources */,
 				5A58695E1CFC2939002F77A2 /* YSEmoticonModel.m in Sources */,
 				5AA76F691CFEBC5C001BF0A9 /* YSEmoticonButton.m in Sources */,
+				5AA76F791CFED799001BF0A9 /* UITextView+Extension.m in Sources */,
 				5A5869561CFC2939002F77A2 /* MJMember.m in Sources */,
 				5AA76F701CFEBEBC001BF0A9 /* YSConst.m in Sources */,
 				5AA76F6A1CFEBC5C001BF0A9 /* YSEmoticonPageView.m in Sources */,

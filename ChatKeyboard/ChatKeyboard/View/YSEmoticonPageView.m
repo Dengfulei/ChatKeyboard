@@ -164,7 +164,7 @@
 //    });
     
     // 发出通知
-    [self selectEmotion:btn.emoticonModel];
+    [self selectEmoticon:btn.emoticonModel];
 }
 
 /**
@@ -172,7 +172,7 @@
  *
  *  @param emotion 被选中的表情
  */
-- (void)selectEmotion:(YSEmoticonModel *)emotion
+- (void)selectEmoticon:(YSEmoticonModel *)emotion
 {
     // 将这个表情存进沙盒
     [YSEmoticonTool addRecentEmoticon:emotion];
@@ -180,6 +180,6 @@
     // 发出通知
     NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
     userInfo[YSSelectEmoticonKey] = emotion;
-    [[NSNotificationCenter defaultCenter] postNotificationName:YSSelectEmoticonKey object:nil userInfo:userInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:YSEmoticonDidSelectNotification object:nil userInfo:userInfo];
 }
 @end

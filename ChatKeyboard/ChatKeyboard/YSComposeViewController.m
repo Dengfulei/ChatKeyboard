@@ -7,14 +7,15 @@
 //
 
 #import "YSComposeViewController.h"
-#import "YSTextView.h"
 #import "YSEmoticonTool.h"
 #import "YSComposeToolbar.h"
 #import "YSEmoticonKeyboard.h"
+#import "YSEmoticonModel.h"
+#import "YSEmoticonTextView.h"
 
 @interface YSComposeViewController ()<UITextViewDelegate,YSComposeToolbarDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 /** 输入控件 */
-@property (nonatomic, strong) YSTextView *textView;
+@property (nonatomic, strong) YSEmoticonTextView *textView;
 /** 键盘顶部的工具条 */
 @property (nonatomic, strong) YSComposeToolbar *toolbar;
 /** 是否正在切换键盘 */
@@ -52,6 +53,14 @@
     [self setupToolbar];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // 成为第一响应者（能输入文本的控件一旦成为第一响应者，就会叫出相应的键盘）
+    [self.textView becomeFirstResponder];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -63,7 +72,7 @@
 - (void)setupTextView
 {
     // 在这个控制器中，textView的contentInset.top默认会等于64
-    _textView = [[YSTextView alloc] init];
+    _textView = [[YSEmoticonTextView alloc] init];
     // 垂直方向上永远可以拖拽（有弹簧效果）
     _textView.alwaysBounceVertical = YES;
     _textView.frame = self.view.bounds;
@@ -77,12 +86,30 @@
     
     // 键盘的frame发生改变时发出的通知（位置和尺寸）
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-//
-//    // 表情选中的通知
-//    [HWNotificationCenter addObserver:self selector:@selector(emotionDidSelect:) name:HWEmotionDidSelectNotification object:nil];
-//    
-//    // 删除文字的通知
-//    [HWNotificationCenter addObserver:self selector:@selector(emotionDidDelete) name:HWEmotionDidDeleteNotification object:nil];
+
+    // 表情选中的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emoticonDidSelect:) name:YSEmoticonDidSelectNotification object:nil];
+    
+    // 删除文字的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emoticonDidDelete) name:YSEmoticonDidDeleteNotification object:nil];
+}
+
+#pragma mark - 监听方法
+/**
+ *  删除文字
+ */
+- (void)emoticonDidDelete
+{
+    [self.textView deleteBackward];
+}
+
+/**
+ *  表情被选中了
+ */
+- (void)emoticonDidSelect:(NSNotification *)notification
+{
+    YSEmoticonModel *emotion = notification.userInfo[YSSelectEmoticonKey];
+    [self.textView insertEmoticon:emotion];
 }
 
 /**
